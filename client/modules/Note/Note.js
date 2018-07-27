@@ -1,30 +1,24 @@
-import React, { Component } from 'react';
-import PropTypes from 'prop-types';
-import { connect } from 'react-redux';
-import { bindActionCreators } from 'redux';
-
-// Import Style
+import React, { PropTypes } from 'react';
 import styles from './Note.css';
 
-class Note extends Component {
+// const Note = props =>
+//   <li className={styles.Note}>{props.children}</li>;
+
+export class Note extends React.Component {
+  constructor(props) {
+    super(props);
+    this.props = props;
+  }
   render() {
+    //const {connectDragSource, connectDropTarget, isDragging, editing, children} = this.props;
     return (
+      <li className={styles.Note}>{props.children}</li>
     );
+
   }
 }
 
-const mapStateToProps = (state) => {
-  return {};
-};
-
-const mapDispatchToProps = (dispatch) => {
-  return {};
-};
-
 Note.propTypes = {
+  //children: PropTypes.any,
 };
 
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps
-)(Note);

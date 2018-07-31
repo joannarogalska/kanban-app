@@ -19,7 +19,7 @@ export function createNote(note, laneId) {
 export function createNotes(notesData) {
   return {
     type: CREATE_NOTES,
-    note: notesData,
+    notes: notesData,
   };
 }
 
@@ -47,7 +47,10 @@ export function deleteNote(noteId, laneId) {
 
 export function createNoteRequest(note, laneId) {
   return (dispatch) => {
+    //console.log('note',note, laneId);
+
     return callApi('notes', 'post', { note, laneId }).then(noteResp => {
+      //console.log('noteResp',noteResp, laneId);
       dispatch(createNote(noteResp, laneId));
     });
   };

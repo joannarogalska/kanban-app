@@ -6,7 +6,7 @@ import styles from './Lane.css';
 const Lane = (props) => {
   const { lane, laneNotes, updateLane, addNote, deleteLane, editLane} = props;
   const laneId = lane.id;
-  console.log('laneNotes',laneNotes);
+  //console.log('laneNotes',laneNotes);
   return (
     <div className={styles.Lane}>
       <div className={styles.LaneHeader}>

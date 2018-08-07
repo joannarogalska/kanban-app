@@ -71,8 +71,8 @@ export function createLaneRequest(lane) {
 
 export function deleteLaneRequest(laneId) {
   return (dispatch) => {
-    return callApi(`lanes/${laneId}`, 'delete').then(res => {
-      dispatch(deleteLane(res));
+    return callApi(`lanes/${laneId}`, 'delete').then(() => {
+      dispatch(deleteLane(laneId));
     })
   }
 }

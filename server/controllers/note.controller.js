@@ -35,7 +35,8 @@ export function addNote(req, res) {
 }
 
 export function deleteNoteFromLine(req, res) {
-  console.log('test asi 0: ',req);
+  //console.log('test asi 0: ',req);
+  const noteId = req.params.noteId;
   Note.findOne({ id: req.params.noteId }).exec((err, note) => {
     if (err) {
       res.status(500).send(err);
@@ -43,7 +44,7 @@ export function deleteNoteFromLine(req, res) {
 
     Lane.findOne({ id: note.id })
       .then(lane => {
-        var filteredNotes = lane.notes.filter(note => note.id !== req.params.noteId);
+        var filteredNotes = lane.notes.filter(note => note.id !== noteId);
         lane.update({ notes: filteredNotes }), (error) => {
           if (error) {
             res.status(500).send(error);

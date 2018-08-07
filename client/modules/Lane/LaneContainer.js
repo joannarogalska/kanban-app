@@ -4,8 +4,6 @@ import { updateLaneRequest, editLane, deleteLaneRequest } from './LaneActions';
 import { createNoteRequest } from '../Note/NoteActions';
 
 const mapStateToProps = (state, ownProps) => {
-  console.log('state',state);
-  console.log('ownprops',ownProps);
   return {
     laneNotes: ownProps.lane.notes.map(noteId => state.notes[noteId])
   };
@@ -22,6 +20,3 @@ export default connect(
   mapStateToProps,
   mapDispatchToProps
 )(Lane);
-
-
-

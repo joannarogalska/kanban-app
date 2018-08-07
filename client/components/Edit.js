@@ -1,4 +1,5 @@
 import React, { Component, PropTypes } from 'react';
+import classNames from 'classNames';
 import styles from './Edit.css';
 
 export default class Edit extends Component {
@@ -24,7 +25,7 @@ export default class Edit extends Component {
     const { value, onDelete, onValueClick } = this.props;
 
     return (
-      <div>
+      <div className={styles.wrapperValue}>
         <span className={styles.value} onClick={onValueClick}>{value}</span>
         {onDelete ? this.renderDelete() : null}
       </div>
@@ -35,6 +36,7 @@ export default class Edit extends Component {
     return (
       <input
         type="text"
+        className={classNames(styles.inputGroup, styles.formControl)}
         autoFocus
         defaultValue={this.props.value}
         onBlur={this.finishEdit}

@@ -5,7 +5,6 @@ import Lane from './LaneContainer.js';
 import styles from './Lane.css';
 
 const Lanes = ({ lanes }) => {
-  console.log('lanes',lanes.length);
   return (
     <div className="lanes">{lanes.map((lane, index) =>
       <div key={index}>

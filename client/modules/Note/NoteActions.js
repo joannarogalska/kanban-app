@@ -25,7 +25,6 @@ export function createNotes(notesData) {
 }
 
 export function updateNote(note) {
-  console.log('note action',note);
   return {
     type: UPDATE_NOTE,
     note,
@@ -33,7 +32,6 @@ export function updateNote(note) {
 }
 
 export function editNote(noteId) {
-  console.log('test edit');
   return {
     type: EDIT_NOTE,
     noteId,
@@ -65,7 +63,6 @@ export function deleteNoteRequest(noteId, laneId) {
 }
 
 export function updateNoteRequest(note) {
-  console.log('jest update?');
   return (dispatch) => {
     return callApi(`notes/${note.id}`, 'put', note).then(() => {
       dispatch(updateNote(note));

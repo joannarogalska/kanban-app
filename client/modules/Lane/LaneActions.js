@@ -9,6 +9,7 @@ export const UPDATE_LANE = 'UPDATE_LANE';
 export const DELETE_LANE = 'DELETE_LANE';
 export const EDIT_LANE = 'EDIT_LANE';
 export const CREATE_LANES = 'CREATE_LANES';
+export const MOVE_BETWEEN_LANES = 'MOVE_BETWEEN_LANES';
 
 // Export Actions
 export function createLane(lane) {
@@ -84,3 +85,13 @@ export function updateLaneRequest(lane) {
     });
   };
 }
+
+export function moveBetweenLanes(targetLaneId, noteId, sourceLaneId) {
+  return {
+    type: MOVE_BETWEEN_LANES,
+    targetLaneId,
+    noteId,
+    sourceLaneId,
+  };
+}
+
